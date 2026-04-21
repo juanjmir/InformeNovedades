@@ -1,0 +1,72 @@
+/* ===============================
+   Estilos generales
+   =============================== */
+
+body {
+  background-color: #f5f7fa;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #212529;
+}
+
+h3 {
+  font-weight: 600;
+  color: #003865; /* Azul institucional sobrio */
+}
+
+/* ===============================
+   Formulario
+   =============================== */
+
+form {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+/* Inputs y textarea */
+input.form-control,
+textarea.form-control {
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+}
+
+/* ===============================
+   Checkboxes
+   =============================== */
+
+.form-check {
+  margin-left: 10px;
+}
+
+.form-check-input {
+  cursor: pointer;
+}
+
+.form-check-label {
+  cursor: pointer;
+}
+
+/* ===============================
+   Firma digital
+   =============================== */
+
+#firma {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  border: 2px dashed #6c757d;
+  border-radius: 6px;
+}
+}
