@@ -1,0 +1,23 @@
+body {
+  background: #f4f6f8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+canvas {
+  border: 1px solid #000;
+  touch-action: none;
+}
+
+label {
+  font-size: 0.9rem;
+}
+
+hr {
+  margin: 1.5rem 0;
+}
