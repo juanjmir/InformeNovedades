@@ -155,7 +155,7 @@ try {
   };
 
   await fetch(
-    "https://script.google.com/macros/s/AKfycbzAslIkRCiJLKyRCKIdU8JKPxNlfz4KsBuMBc2IitOpygQ4Ntr_Jk33r_hLMJta3Eg/exec",
+    "https://script.google.com/macros/s/AKfycbzs4m2aRTBAuH0VPq-SPCWyzG3S4LtU94JVhW1ANNxlCq3ky6u7uzXu50BLQTATk4K0wA/exec",
     {
       method: "POST",
       mode: "no-cors", // Evita problemas de redirección CORS con Google
