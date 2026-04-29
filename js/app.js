@@ -141,46 +141,60 @@ document.getElementById("formInforme").addEventListener("submit", async e => {
   pdf.text("Firma Docente,", 10, y);
   pdf.addImage(firma.toDataURL(), "PNG", 50, y - 5, 60, 25);
 
-  // ===============================
+// ===============================
   // Envío por Google Apps Script
   // ===============================
-const mensajeCarga = document.getElementById("mensajeCarga");
-mensajeCarga.style.display = "inline";
+  const mensajeCarga = document.getElementById("mensajeCarga");
+  mensajeCarga.style.display = "inline";
 
-const pdfBase64 = pdf.output("datauristring").split(',')[1]; 
+  const pdfBase64 = pdf.output("datauristring").split(',')[1]; 
 
-try {
-  const payload = {
-    correoUsuario: document.getElementById("correo").value,
-    pdfBase64: pdfBase64
+  // 1. Recolectamos novedades (Esto está perfecto en tu código)
+  let listaNovedades = [];
+  document.querySelectorAll(".problema:checked").forEach(chk => {
+      const id = chk.dataset.id;
+      const obs = document.getElementById(`obs-${id}`).value || "Sin observaciones";
+      const etiqueta = chk.nextElementSibling.innerText;
+      listaNovedades.push(`${etiqueta}: ${obs}`);
+  });
+
+  // 2. ÚNICO Payload con TODO
+  const payloadTodo = {
+    docente: docente.value,
+    asignatura: asignatura.value,
+    fecha: fecha.value,
+    horario: horario.value,
+    laboratorio: laboratorio.value,
+    novedades: listaNovedades.join(" | "),
+    descripcion: descripcion.value,
+    correoUsuario: correo.value,
+    pdfBase64: pdfBase64 
   };
 
-  await fetch(
-    "https://script.google.com/macros/s/AKfycbzs4m2aRTBAuH0VPq-SPCWyzG3S4LtU94JVhW1ANNxlCq3ky6u7uzXu50BLQTATk4K0wA/exec",
-    {
-      method: "POST",
-      mode: "no-cors", // Evita problemas de redirección CORS con Google
-      cache: "no-cache",
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8", // Importante para Google Apps Script
-      },
-      body: JSON.stringify(payload)
-    }
-  );
+  try {
+    // 3. UN SOLO fetch (Este hace ambas cosas en el servidor)
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbzs4m2aRTBAuH0VPq-SPCWyzG3S4LtU94JVhW1ANNxlCq3ky6u7uzXu50BLQTATk4K0wA/exec",
+      {
+        method: "POST",
+        mode: "no-cors",
+        cache: "no-cache",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payloadTodo) 
+      }
+    );
 
-  alert("Informe enviado correctamente ✅");
-  document.getElementById("formInforme").reset();
-  limpiarFirma();
+    alert("Informe enviado, registrado en Excel y correo despachado ✅");
+    
+    // Limpieza
+    document.getElementById("formInforme").reset();
+    if(typeof limpiarFirma === 'function') limpiarFirma();
+    location.reload(); 
 
-} catch (err) {
-  console.error(err);
-  alert("Error al enviar el informe.");
-}
-finally {
-  // 3. Finalización: Ocultar mensaje y reactivar botón
-  // El bloque 'finally' se ejecuta siempre, funcione o falle el envío.
- 
-  mensajeCarga.style.display = "none";
-
-}
+  } catch (err) {
+    console.error(err);
+    alert("Error al enviar el informe.");
+  } finally {
+    mensajeCarga.style.display = "none";
+  }
 });
