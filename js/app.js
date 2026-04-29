@@ -146,6 +146,7 @@ document.getElementById("formInforme").addEventListener("submit", async e => {
   // ===============================
 const mensajeCarga = document.getElementById("mensajeCarga");
 mensajeCarga.style.display = "inline";
+btnEnviar.disabled = true;
 const pdfBase64 = pdf.output("datauristring").split(',')[1]; 
 
 try {
@@ -180,5 +181,6 @@ finally {
   // El bloque 'finally' se ejecuta siempre, funcione o falle el envío.
  
   mensajeCarga.style.display = "none";
+  btnEnviar.disabled = false;
 }
 });
