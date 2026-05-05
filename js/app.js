@@ -56,7 +56,7 @@ document.getElementById("formInforme").addEventListener("submit", async e => {
   );
   y += 7;
   pdf.text(
-    "Favor una vez completa hacer entrega del documento al Operador Técnico de Laboratorio o Encargado de Laboratorio/Taller.",
+    "Favor una vez completa hacer entrega del documento al Encargado de Laboratorio/Taller.",
     10, y
   );
 
