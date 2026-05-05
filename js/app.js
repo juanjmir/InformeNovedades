@@ -7,7 +7,7 @@ document.getElementById("fecha").valueAsDate = new Date();
 
 // Horarios
 const horarioSelect = document.getElementById("horario");
-horarioSelect.add(new Option("Seleccione horario", ""));
+/* horarioSelect.add(new Option("Seleccione horario", ""));
 
 let hora = 8.5;
 while (hora <= 22) {
@@ -16,7 +16,7 @@ while (hora <= 22) {
   const m = hora % 1 === 0 ? "00" : "30";
   horarioSelect.add(new Option(`${h}:${m}`));
   hora += 1.5;
-  if(hora==10){minuto=minuto+10}
+ */
 }
 
 // Mostrar observaciones por checkbox
