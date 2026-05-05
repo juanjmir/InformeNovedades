@@ -16,9 +16,9 @@ while (hora <= 22) {
   const m = hora % 1 === 0 ? "00" : "30";
   horarioSelect.add(new Option(`${h}:${m}`));
   hora += 1.5;
- */
+ 
 }
-
+*/
 // Mostrar observaciones por checkbox
 document.querySelectorAll(".problema").forEach(chk => {
   chk.addEventListener("change", e => {
