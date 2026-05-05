@@ -185,7 +185,7 @@ document.getElementById("formInforme").addEventListener("submit", async e => {
       }
     );
 
-    alert("Informe enviado, registrado en Excel y correo despachado ✅");
+    alert("Informe enviado");
     
     // Limpieza
     document.getElementById("formInforme").reset();
