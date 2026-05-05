@@ -7,18 +7,17 @@ document.getElementById("fecha").valueAsDate = new Date();
 
 // Horarios
 const horarioSelect = document.getElementById("horario");
-/* horarioSelect.add(new Option("Seleccione horario", ""));
+//horarioSelect.add(new Option("Seleccione horario", ""));
 
-let hora = 8.5;
-while (hora <= 22) {
+//let hora = 8.5;
+//while (hora <= 22) {
   
-  const h = Math.floor(hora);
-  const m = hora % 1 === 0 ? "00" : "30";
-  horarioSelect.add(new Option(`${h}:${m}`));
-  hora += 1.5;
- 
-}
-*/
+//  const h = Math.floor(hora);
+//  const m = hora % 1 === 0 ? "00" : "30";
+//  horarioSelect.add(new Option(`${h}:${m}`));
+//  hora += 1.5;
+//}
+
 // Mostrar observaciones por checkbox
 document.querySelectorAll(".problema").forEach(chk => {
   chk.addEventListener("change", e => {
