@@ -173,7 +173,7 @@ document.getElementById("formInforme").addEventListener("submit", async e => {
   };
 
   try {
-    // 3. UN SOLO fetch (Este hace ambas cosas en el servidor)
+
     await fetch(
       "https://script.google.com/macros/s/AKfycbyxdHnV7jeY7Iy1aG2_P7CcSjXtcE5CEeGv_r1VYtrNV0UXvoXjPcOwSN0J1IsxRB0DVQ/exec",
       {
