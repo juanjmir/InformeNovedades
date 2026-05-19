@@ -175,7 +175,7 @@ document.getElementById("formInforme").addEventListener("submit", async e => {
   try {
 
     await fetch(
-      "https://script.google.com/macros/s/AKfycbyxdHnV7jeY7Iy1aG2_P7CcSjXtcE5CEeGv_r1VYtrNV0UXvoXjPcOwSN0J1IsxRB0DVQ/exec",
+      "https://script.google.com/macros/s/AKfycby6rQfOtDXmdVF_-HEgmSRFStNozvTUjN7vQnpwaSfl69tFEPYSYBpOp5yFlXL3ziNnLg/exec",
       {
         method: "POST",
         mode: "no-cors",
