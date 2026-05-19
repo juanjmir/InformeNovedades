@@ -175,7 +175,7 @@ document.getElementById("formInforme").addEventListener("submit", async e => {
   try {
     // 3. UN SOLO fetch (Este hace ambas cosas en el servidor)
     await fetch(
-      "https://script.google.com/macros/s/AKfycbwFciModvQqqGwLSTGZ0T74c462IGlbmc5D009mhVPFsqOQX5a53sQ41UlLTX_8Vxb_0Q/exec",
+      "https://script.google.com/macros/s/AKfycbyeliYAS79Z-qeKSJirpbSuTNbWH1h84LpjqRAiQQO7TWW25z6LRVUAcxwjcENEQurDLg/exec",
       {
         method: "POST",
         mode: "no-cors",
