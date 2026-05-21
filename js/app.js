@@ -3,7 +3,7 @@
 // ===============================
 
 // Fecha actual automática
-document.getElementById("fecha").valueAsDate = new Date();
+document.getElementById("fecha").valueAsDate = new Date()-4;
 
 // Horarios
 const horarioSelect = document.getElementById("horario");
